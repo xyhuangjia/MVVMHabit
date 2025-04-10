@@ -19,7 +19,6 @@ import androidx.lifecycle.ViewModelProviders;
 import me.goldze.mvvmhabit.base.BaseFragment;
 import me.goldze.mvvmhabit.utils.MaterialDialogUtils;
 import me.goldze.mvvmhabit.utils.ToastUtils;
-import me.tatarka.bindingcollectionadapter2.BindingRecyclerViewAdapter;
 
 /**
  * Created by goldze on 2017/7/17.
@@ -67,7 +66,7 @@ public class NetWorkFragment extends BaseFragment<FragmentNetworkBinding, NetWor
             }
         });
         //监听上拉加载完成
-        viewModel.uc.finishLoadmore.observe(this, new Observer() {
+        viewModel.uc.finishLoadMore.observe(this, new Observer() {
             @Override
             public void onChanged(@Nullable Object o) {
                 //结束刷新

@@ -11,7 +11,6 @@ import androidx.annotation.NonNull;
 import androidx.databinding.ObservableArrayList;
 import androidx.databinding.ObservableList;
 import io.reactivex.disposables.Disposable;
-import io.reactivex.functions.Action;
 import io.reactivex.functions.Consumer;
 import io.reactivex.observers.DisposableObserver;
 import me.goldze.mvvmhabit.base.BaseViewModel;
@@ -37,7 +36,7 @@ public class NetWorkViewModel extends BaseViewModel<DemoRepository> {
         //下拉刷新完成
         public SingleLiveEvent finishRefreshing = new SingleLiveEvent<>();
         //上拉加载完成
-        public SingleLiveEvent finishLoadmore = new SingleLiveEvent<>();
+        public SingleLiveEvent finishLoadMore = new SingleLiveEvent<>();
     }
 
     public NetWorkViewModel(@NonNull Application application, DemoRepository repository) {
@@ -62,7 +61,7 @@ public class NetWorkViewModel extends BaseViewModel<DemoRepository> {
         public void call() {
             if (observableList.size() > 50) {
                 ToastUtils.showLong("兄dei，你太无聊啦~崩是不可能的~");
-                uc.finishLoadmore.call();
+                uc.finishLoadMore.call();
                 return;
             }
             //模拟网络上拉加载更多
@@ -84,7 +83,7 @@ public class NetWorkViewModel extends BaseViewModel<DemoRepository> {
                                 observableList.add(itemViewModel);
                             }
                             //刷新完成收回
-                            uc.finishLoadmore.call();
+                            uc.finishLoadMore.call();
                         }
                     });
         }
