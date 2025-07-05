@@ -3,7 +3,6 @@ package com.goldze.mvvmhabit.utils;
 import android.content.Context;
 import android.text.TextUtils;
 
-import com.goldze.mvvmhabit.BuildConfig;
 
 import java.io.File;
 import java.util.Map;
@@ -87,7 +86,7 @@ public class RetrofitClient {
                 .sslSocketFactory(sslParams.sSLSocketFactory, sslParams.trustManager)
                 .addInterceptor(new LoggingInterceptor
                         .Builder()//构建者模式
-                        .loggable(BuildConfig.DEBUG) //是否开启日志打印
+                        .loggable(false) //是否开启日志打印
                         .setLevel(Level.BASIC) //打印的等级
                         .log(Platform.INFO) // 打印类型
                         .request("Request") // request的Tag

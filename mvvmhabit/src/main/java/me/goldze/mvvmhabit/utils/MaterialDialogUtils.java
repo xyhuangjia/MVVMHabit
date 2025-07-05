@@ -16,6 +16,7 @@ import com.afollestad.materialdialogs.Theme;
 import java.util.List;
 
 import androidx.annotation.NonNull;
+
 import me.goldze.mvvmhabit.R;
 
 
@@ -27,42 +28,42 @@ public class MaterialDialogUtils {
 
     public void showThemed(Context context, String
             title, String content) {
-        new MaterialDialog.Builder(context)
-                .title(title)
-                .content(content)
-                .positiveText("agree")
-                .negativeText("disagree")
-                .positiveColorRes(R.color.white)
-                .negativeColorRes(R.color.white)
-                .titleGravity(GravityEnum.CENTER)
-                .titleColorRes(R.color.white)
-                .contentColorRes(android.R.color.white)
-                .backgroundColorRes(R.color.material_blue_grey_800)
-                .dividerColorRes(R.color.white)
-                .btnSelector(R.drawable.md_selector, DialogAction.POSITIVE)
-                .positiveColor(Color.WHITE)
-                .negativeColorAttr(android.R.attr.textColorSecondaryInverse)
-                .theme(Theme.DARK)
-                .autoDismiss(true)  //点击是否关闭对话框
-                .showListener(new DialogInterface.OnShowListener() {
-                    @Override
-                    public void onShow(DialogInterface dialog) {
-                        //dialog 出现
-                    }
-                })
-                .cancelListener(new DialogInterface.OnCancelListener() {
-                    @Override
-                    public void onCancel(DialogInterface dialog) {
-                        //dialog 消失（返回键）
-                    }
-                })
-                .dismissListener(new DialogInterface.OnDismissListener() {
-                    @Override
-                    public void onDismiss(DialogInterface dialog) {
-                        //dialog 消失
-                    }
-                })
-                .show();
+//        new MaterialDialog.Builder(context)
+//                .title(title)
+//                .content(content)
+//                .positiveText("agree")
+//                .negativeText("disagree")
+//                .positiveColorRes(R.color.white)
+//                .negativeColorRes(R.color.white)
+//                .titleGravity(GravityEnum.CENTER)
+//                .titleColorRes(R.color.white)
+//                .contentColorRes(android.R.color.white)
+//                .backgroundColorRes(R.color.material_blue_grey_800)
+//                .dividerColorRes(R.color.white)
+//                .btnSelector(R.drawable.md_selector, DialogAction.POSITIVE)
+//                .positiveColor(Color.WHITE)
+//                .negativeColorAttr(android.R.attr.textColorSecondaryInverse)
+//                .theme(Theme.DARK)
+//                .autoDismiss(true)  //点击是否关闭对话框
+//                .showListener(new DialogInterface.OnShowListener() {
+//                    @Override
+//                    public void onShow(DialogInterface dialog) {
+//                        //dialog 出现
+//                    }
+//                })
+//                .cancelListener(new DialogInterface.OnCancelListener() {
+//                    @Override
+//                    public void onCancel(DialogInterface dialog) {
+//                        //dialog 消失（返回键）
+//                    }
+//                })
+//                .dismissListener(new DialogInterface.OnDismissListener() {
+//                    @Override
+//                    public void onDismiss(DialogInterface dialog) {
+//                        //dialog 消失
+//                    }
+//                })
+//                .show();
 
         //获取按钮并监听
 //        MDButton btn = materialDialog.getActionButton(DialogAction.NEGATIVE);
@@ -272,35 +273,35 @@ public class MaterialDialogUtils {
      * @param
      * @return MaterialDialog.Builder
      */
-    public static MaterialDialog.Builder showMultiListDialog(final Context context, String title, List
-            content) {
-
-        MaterialDialog.Builder builder = new MaterialDialog.Builder(context)
-                .title(title)
-                .items(content)
-                .itemsCallbackMultiChoice(new Integer[]{1, 3}, new MaterialDialog
-                        .ListCallbackMultiChoice() {
-                    @Override
-                    public boolean onSelection(MaterialDialog dialog, Integer[] which, CharSequence[] text) {
-
-
-                        return true; // allow selection
-                    }
-                })
-                .onNeutral(new MaterialDialog.SingleButtonCallback() {
-                    @Override
-                    public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
-                        dialog.clearSelectedIndices();
-                    }
-                })
-                .alwaysCallMultiChoiceCallback()
-                .positiveText(R.string.md_choose_label)
-                .autoDismiss(false)
-                .neutralText("clear")
-                .itemsDisabledIndices(0, 1);
-
-        return builder;
-    }
+//    public static MaterialDialog.Builder showMultiListDialog(final Context context, String title, List
+//            content) {
+//
+//        MaterialDialog.Builder builder = new MaterialDialog.Builder(context)
+//                .title(title)
+//                .items(content)
+//                .itemsCallbackMultiChoice(new Integer[]{1, 3}, new MaterialDialog
+//                        .ListCallbackMultiChoice() {
+//                    @Override
+//                    public boolean onSelection(MaterialDialog dialog, Integer[] which, CharSequence[] text) {
+//
+//
+//                        return true; // allow selection
+//                    }
+//                })
+//                .onNeutral(new MaterialDialog.SingleButtonCallback() {
+//                    @Override
+//                    public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
+//                        dialog.clearSelectedIndices();
+//                    }
+//                })
+//                .alwaysCallMultiChoiceCallback()
+//                .positiveText(R.string.md_choose_label)
+//                .autoDismiss(false)
+//                .neutralText("clear")
+//                .itemsDisabledIndices(0, 1);
+//
+//        return builder;
+//    }
 
 
     /***
