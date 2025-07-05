@@ -8,6 +8,7 @@ android {
         targetSdkVersion rootProject.ext.android.targetSdkVersion
         versionCode rootProject.ext.android.versionCode
         versionName rootProject.ext.android.versionName
+        multiDexEnabled true
     }
     dataBinding {
         enabled true
@@ -32,6 +33,7 @@ dependencies {
     api rootProject.ext.support["support-v4"]
     api rootProject.ext.support["appcompat-v7"]
     api rootProject.ext.support["recyclerview-v7"]
+    api rootProject.ext.support["junit"]
     //rxjava
     api rootProject.ext.dependencies.rxjava
     api rootProject.ext.dependencies.rxandroid
@@ -68,6 +70,7 @@ dependencies {
     api (rootProject.ext.dependencies.glide){
         exclude group: 'com.android.support'
     }
+    implementation 'androidx.test.ext:junit:1.2.1'
     annotationProcessor rootProject.ext.dependencies["glide-compiler"]
     //recyclerview的databinding套装
     api(rootProject.ext.dependencies.bindingcollectionadapter) {
